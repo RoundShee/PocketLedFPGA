@@ -1,9 +1,9 @@
 /* decide which one to execute and stop
-
+delete
 */
 
 module menu(
-    input wire[8:0] keys,
+    input wire[6:0] keys,
     input wire[7:0] en_back,
 
     output reg[7:0] en_sub
