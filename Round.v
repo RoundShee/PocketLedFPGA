@@ -22,10 +22,24 @@ control control_u(
 
 wire[4:0] row_wire;
 wire[6:0] column_wire;
-//多个模块都需要操作，或运算
+//多个模块都需要操作
 always @(*) begin
-    row <= row_wire | row_wire_scan;
-    column <= column_wire | column_wire_scan;
+    if(en_wire[0]) begin
+        row <= row_wire;
+        column <= column_wire;
+    end
+    else if(en_wire[1]) begin
+        row <= row_wire_scan;
+        column <= column_wire_scan;
+    end
+    else if(en_wire[2]) begin
+        row <= row_wire_pic;
+        column <= column_wire_pic;
+    end
+    else begin
+        row <= 5'd0;
+        column <= 7'd0;
+    end
 end
 //测试模块
 utility_1 utility_1_1(
@@ -43,6 +57,28 @@ scanlight scanlight_uti(
     .CLOCK_50(CLOCK_50),
     .row(row_wire_scan),
     .column(column_wire_scan)
+);
+
+//picture模块
+/*
+wire[4:0] row_wire_pic;
+wire[6:0] column_wire_pic;
+picture picture_uti(
+    .en(en_wire[2]),
+    .CLOCK_50(CLOCK_50),
+    .key(keys[4:1]),
+    .row(row_wire_pic),
+    .column(column_wire_pic)
+);
+*/
+wire[4:0] row_wire_pic;
+wire[6:0] column_wire_pic;
+picture_plus picture_uti(
+    .en(en_wire[2]),
+    .CLOCK_50(CLOCK_50),
+    .key(keys[4:1]),
+    .row(row_wire_pic),
+    .column(column_wire_pic)
 );
 
 endmodule
