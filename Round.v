@@ -11,7 +11,7 @@ module Round (
 wire[7:0] led_wire;
 wire[3:0] en_wire;
 always @(*) begin
-    leds <= led_wire;
+    leds <= {led7_pic||led_wire[7],led_wire[6:0]};
 end
 control control_u(
     .CLOCK_50(CLOCK_50),
@@ -73,10 +73,12 @@ picture picture_uti(
 */
 wire[4:0] row_wire_pic;
 wire[6:0] column_wire_pic;
+wire led7_pic;
 picture_plus picture_uti(
     .en(en_wire[2]),
     .CLOCK_50(CLOCK_50),
     .key(keys[4:1]),
+    .led_edit(led7_pic),
     .row(row_wire_pic),
     .column(column_wire_pic)
 );

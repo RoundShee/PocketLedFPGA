@@ -7,6 +7,7 @@ module picture_plus (
     input en,
     input CLOCK_50,
     input wire[4:1] key, //key1短按为shift，长按控制只读和编辑转换
+    output reg led_edit,
     output reg[4:0] row,
     output reg[6:0] column
 );
@@ -45,5 +46,18 @@ always @(posedge CLOCK_50) begin
         else ens_storage <= ens_storage + ens_cursor;
     end
     else ens_storage <= ens_storage;
+end
+
+//增加编辑指示
+reg[25:0] countToLed;
+always @(posedge CLOCK_50) begin
+    if(en&&edit) 
+        countToLed <= countToLed + 1;
+    else countToLed <= 0;
+end
+always @(*) begin
+    if(en&&edit)
+        led_edit <= countToLed[24];
+    else led_edit <= 0;
 end
 endmodule
