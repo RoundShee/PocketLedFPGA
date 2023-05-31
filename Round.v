@@ -11,7 +11,7 @@ module Round (
 wire[7:0] led_wire;
 wire[3:0] en_wire;
 always @(*) begin
-    leds <= {led7_pic||led_wire[7],led_wire[6:0]};
+    leds <= {led7_pic||led_wire[7]||leds_gif[7],led_wire[6:4]|leds_gif[6:4],led_wire[3:0]};
 end
 control control_u(
     .CLOCK_50(CLOCK_50),
@@ -35,6 +35,10 @@ always @(*) begin
     else if(en_wire[2]) begin
         row <= row_wire_pic;
         column <= column_wire_pic;
+    end
+    else if(en_wire[3]) begin
+        row <= row_wire_gif;
+        column <= column_wire_gif;
     end
     else begin
         row <= 5'd0;
@@ -83,4 +87,15 @@ picture_plus picture_uti(
     .column(column_wire_pic)
 );
 
+wire[4:0] row_wire_gif;
+wire[6:0] column_wire_gif;
+wire[7:4] leds_gif;
+gif gif_last(
+    .en(en_wire[3]),
+    .CLOCK_50(CLOCK_50),
+    .keys(keys[6:1]),
+    .leds(leds_gif),
+    .row(row_wire_gif),
+    .column(column_wire_gif)
+);
 endmodule
