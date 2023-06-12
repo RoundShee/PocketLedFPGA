@@ -1,0 +1,49 @@
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+# Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+# File: F:\ProjectforFPGA\TrueHardWare\Round.csv
+# Generated on: Mon Jun 12 22:45:50 2023
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair
+CLOCK_50,Input,PIN_A12,7,B7_N3,PIN_A12,,,,,
+column[6],Output,PIN_J22,6,B6_N3,PIN_J22,,,,,
+column[5],Output,PIN_F22,6,B6_N2,PIN_F22,,,,,
+column[4],Output,PIN_P22,5,B5_N1,PIN_P22,,,,,
+column[3],Output,PIN_H22,6,B6_N3,PIN_H22,,,,,
+column[2],Output,PIN_J21,6,B6_N3,PIN_J21,,,,,
+column[1],Output,PIN_F21,6,B6_N2,PIN_F21,,,,,
+column[0],Output,PIN_H21,6,B6_N2,PIN_H21,,,,,
+keys[6],Input,PIN_B6,8,B8_N1,PIN_B6,,,,,
+keys[5],Input,PIN_A6,8,B8_N1,PIN_A6,,,,,
+keys[4],Input,PIN_D7,8,B8_N2,PIN_D7,,,,,
+keys[3],Input,PIN_C7,8,B8_N1,PIN_C7,,,,,
+keys[2],Input,PIN_D6,8,B8_N3,PIN_D6,,,,,
+keys[1],Input,PIN_C6,8,B8_N2,PIN_C6,,,,,
+keys[0],Input,PIN_E5,8,B8_N3,PIN_E5,,,,,
+leds[7],Output,PIN_AA1,2,B2_N2,PIN_AA1,,,,,
+leds[6],Output,PIN_Y2,2,B2_N2,PIN_Y2,,,,,
+leds[5],Output,PIN_Y1,2,B2_N2,PIN_Y1,,,,,
+leds[4],Output,PIN_W2,2,B2_N2,PIN_W2,,,,,
+leds[3],Output,PIN_N2,2,B2_N0,PIN_N2,,,,,
+leds[2],Output,PIN_N1,2,B2_N0,PIN_N1,,,,,
+leds[1],Output,PIN_M2,2,B2_N0,PIN_M2,,,,,
+leds[0],Output,PIN_M1,2,B2_N0,PIN_M1,,,,,
+row[4],Output,PIN_L21,6,B6_N3,PIN_L21,,,,,
+row[3],Output,PIN_M21,5,B5_N0,PIN_M21,,,,,
+row[2],Output,PIN_N21,5,B5_N0,PIN_N21,,,,,
+row[1],Output,PIN_P21,5,B5_N1,PIN_P21,,,,,
+row[0],Output,PIN_K21,6,B6_N3,PIN_K21,,,,,
